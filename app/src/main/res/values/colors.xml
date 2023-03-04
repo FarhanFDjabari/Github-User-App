@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_git">#6E5494</color>
+    <color name="orange_git">#C9510C</color>
+    <color name="red_git">#bd2c00</color>
+    <color name="green_git">#6cc644</color>
+    <color name="blue_git">#4078c0</color>
+    <color name="black">#000333</color>
+    <color name="black_60">#99000333</color>
+    <color name="blackShimmer">#3a3a3a</color>
+    <color name="white">#fafafa</color>
+    <color name="ghost_white">#f5f5f5</color>
+    <color name="ghost_white_60">#99F5F5F5</color>
+    <color name="shimmerColor">#C2C2C2</color>
+</resources>

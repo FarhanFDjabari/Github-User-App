@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_horizontal"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/civ_user_avatar"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="16dp"
+        android:src="@color/blackShimmer"/>
+
+    <TextView
+        android:id="@+id/tv_name_detail"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ellipsize="start"
+        android:maxWidth="300dp"
+        android:maxLines="2"
+        android:background="@color/blackShimmer"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_username_detail"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:maxWidth="200dp"
+        android:maxLines="1"
+        android:textColor="@color/white"
+        android:background="@color/blackShimmer"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_company_detail"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:drawablePadding="4dp"
+        android:maxLines="1"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:background="@color/blackShimmer" />
+
+    <TextView
+        android:id="@+id/tv_location_detail"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:drawablePadding="4dp"
+        android:layout_marginTop="4dp"
+        android:maxLines="1"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:background="@color/blackShimmer"
+        app:drawableTint="@color/white" />
+
+    <LinearLayout
+        android:id="@+id/follower_following_repo_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:gravity="center" >
+
+        <TextView
+            android:id="@+id/tv_follower_detail"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:maxWidth="100dp"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            android:background="@color/blackShimmer"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_follower_count_detail"
+            app:layout_constraintLeft_toRightOf="@id/tv_follower_count_detail"
+            app:layout_constraintStart_toEndOf="@+id/tv_follower_count_detail"
+            app:layout_constraintTop_toTopOf="@+id/tv_follower_count_detail" />
+
+        <ImageView
+            android:id="@+id/circle_dot"
+            android:layout_width="2dp"
+            android:layout_height="2dp"
+            android:layout_marginStart="4dp"
+            android:src="@drawable/circle_dot"
+            app:layout_constraintBottom_toBottomOf="@id/tv_follower_detail"
+            app:layout_constraintStart_toEndOf="@id/tv_follower_detail"
+            app:layout_constraintTop_toTopOf="@id/tv_follower_detail"
+            app:tint="@color/white"
+            android:contentDescription="@string/circle_dot_shimmer" />
+
+        <TextView
+            android:id="@+id/tv_following_detail"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:background="@color/blackShimmer" />
+
+        <ImageView
+            android:id="@+id/circle_dot2"
+            android:layout_width="2dp"
+            android:layout_height="2dp"
+            android:layout_marginStart="4dp"
+            android:src="@drawable/circle_dot"
+            app:layout_constraintBottom_toBottomOf="@id/tv_following_detail"
+            app:layout_constraintStart_toEndOf="@id/tv_following_detail"
+            app:layout_constraintTop_toTopOf="@id/tv_following_detail"
+            app:tint="@color/white"
+            android:contentDescription="@string/circle_dot_shimmer" />
+
+        <TextView
+            android:id="@+id/tv_repository_detail"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:background="@color/blackShimmer"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_repository_count_detail"
+            app:layout_constraintStart_toEndOf="@+id/tv_repository_count_detail"
+            app:layout_constraintTop_toTopOf="@+id/tv_repository_count_detail" />
+
+    </LinearLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        app:tabTextColor="@color/shimmerColor"/>
+
+</LinearLayout>

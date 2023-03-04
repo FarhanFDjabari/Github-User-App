@@ -1,0 +1,48 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.GithubUsersSubmission" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/ghost_white</item>
+        <item name="colorPrimaryVariant">@color/ghost_white</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorAccent">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/black</item>
+        <item name="colorSecondaryVariant">@color/black</item>
+        <item name="colorOnSecondary">@color/ghost_white</item>
+        <item name="civ_border_color">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:windowLightStatusBar">?attr/colorAccent</item>
+        <!-- Customize your theme here. -->
+        <item name="colorSurface">@color/ghost_white</item>
+        <item name="colorOnSurface">@color/black</item>
+        <item name="colorOnBackground">@color/black</item>
+        <item name="android:colorBackground">@color/ghost_white</item>
+
+        <item name="toolbarStyle">@style/ToolbarTheme</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimaryDark">@color/black</item>
+        <item name="colorAccent">@color/ghost_white</item>
+        <item name="android:windowLightStatusBar">?attr/colorAccent</item>
+        <item name="android:statusBarColor">@color/ghost_white</item>
+    </style>
+
+    <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/text_field_color</item>
+        <item name="colorPrimary">@color/text_field_color</item>
+        <item name="hintTextColor">@color/text_field_color</item>
+        <item name="boxStrokeWidth">2dp</item>
+    </style>
+
+    <style name="ToolbarTheme" parent="Widget.MaterialComponents.Toolbar">
+        <item name="titleTextColor">@color/black</item>
+        <item name="android:textColorSecondary">@color/black</item>
+        <item name="navigationIconTint">@color/black</item>
+        <item name="android:colorControlNormal">@color/black</item>
+    </style>
+</resources>

@@ -1,0 +1,49 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.GithubUsersSubmission" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimaryVariant">@color/black</item>
+        <item name="colorOnPrimary">@color/ghost_white</item>
+        <item name="colorAccent">@color/ghost_white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/ghost_white</item>
+        <item name="colorSecondaryVariant">@color/white</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="civ_border_color">@color/ghost_white</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <item name="colorSurface">@color/black</item>
+        <item name="colorOnSurface">@color/ghost_white</item>
+        <item name="colorOnBackground">@color/ghost_white</item>
+        <item name="android:colorBackground">@color/black</item>
+
+        <item name="toolbarStyle">@style/ToolbarTheme</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimaryDark">@color/black</item>
+        <item name="colorAccent">@color/black</item>
+        <item name="android:windowLightStatusBar">?attr/colorAccent</item>
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+    </style>
+
+    <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/text_field_color</item>
+        <item name="colorPrimary">@color/text_field_color</item>
+        <item name="hintTextColor">@color/text_field_color</item>
+        <item name="boxStrokeWidth">2dp</item>
+        <item name="colorControlActivated">@color/ghost_white</item>
+        <item name="colorControlNormal">@color/ghost_white</item>
+        <item name="colorControlHighlight">@color/ghost_white</item>
+    </style>
+
+    <style name="ToolbarTheme" parent="Widget.MaterialComponents.Toolbar">
+        <item name="titleTextColor">@color/ghost_white</item>
+        <item name="android:colorControlNormal">@color/ghost_white</item>
+        <item name="android:elevation">0dp</item>
+    </style>
+</resources>
