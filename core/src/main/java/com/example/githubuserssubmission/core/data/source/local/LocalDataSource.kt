@@ -26,7 +26,7 @@ class LocalDataSource @Inject constructor(private val userDao: UserDao)  {
 
     suspend fun updateFavoriteUser(user: GithubUserEntity, newState: Boolean) {
         user.isFavorite = newState
-        userDao.update(user);
+        userDao.update(user)
     }
 
     suspend fun insert(user: List<GithubUserEntity>) = userDao.insert(user)

@@ -7,12 +7,9 @@ import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
 open class GithubUserApplication : SplitCompatApplication() {
-    override fun onCreate() {
-        super.onCreate()
-    }
 
     override fun attachBaseContext(base: Context?) {
         super.attachBaseContext(base)
-        SplitCompat.install(this);
+        SplitCompat.install(this)
     }
 }

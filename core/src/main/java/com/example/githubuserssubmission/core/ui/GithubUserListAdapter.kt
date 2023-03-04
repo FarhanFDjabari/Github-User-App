@@ -9,7 +9,7 @@ import com.bumptech.glide.Glide
 import com.example.githubuserssubmission.core.databinding.GithubUserItemBinding
 import com.example.githubuserssubmission.core.domain.model.GithubUser
 
-class GithubUserListAdapter() :
+class GithubUserListAdapter :
     ListAdapter<GithubUser, GithubUserListAdapter.ListViewHolder>(DIFF_CALLBACK) {
     private lateinit var onItemClickCallback: OnItemClickCallback
 
