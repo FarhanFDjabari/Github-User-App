@@ -44,7 +44,7 @@ class GithubUserDetail : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        supportActionBar?.title = "Detail User"
+        supportActionBar?.title = getString(R.string.detail_user_title)
         supportActionBar?.elevation = 0f
 
         binding = ActivityGithubUserDetailBinding.inflate(layoutInflater)

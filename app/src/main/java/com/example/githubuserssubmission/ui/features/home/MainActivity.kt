@@ -142,11 +142,11 @@ class MainActivity : AppCompatActivity() {
 
             splitInstallManager.startInstall(request)
                 .addOnSuccessListener {
-                    Toast.makeText(this, "Success installing module", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, getString(R.string.module_success_install), Toast.LENGTH_SHORT).show()
                     val uri = Uri.parse("githubuserssubmission://favorite")
                     startActivity(Intent(Intent.ACTION_VIEW, uri))
                 }.addOnFailureListener {
-                    Toast.makeText(this, "Error installing module", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, getString(R.string.module_install_error), Toast.LENGTH_SHORT).show()
                 }
         }
     }

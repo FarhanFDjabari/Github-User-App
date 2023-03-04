@@ -12,10 +12,6 @@ class GithubUserDetailViewModel @Inject constructor(
     private val githubUserUseCase: GithubUserUseCase,
 ) : ViewModel() {
 
-    companion object {
-        private const val TAG = "GithubUserDetailViewModel"
-    }
-
     fun getThemeSettings(): LiveData<Boolean> {
         return githubUserUseCase.getThemeSetting().asLiveData()
     }

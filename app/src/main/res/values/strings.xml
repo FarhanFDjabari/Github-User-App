@@ -124,6 +124,9 @@
     <string name="action_dark_mode">Dark Mode</string>
     <string name="list_empty">No Data</string>
     <string name="title_favorite">Module Title</string>
+    <string name="detail_user_title">Detail User</string>
+    <string name="module_success_install">Success installing module</string>
+    <string name="module_install_error">Error installing module</string>
 
 </resources>
 
