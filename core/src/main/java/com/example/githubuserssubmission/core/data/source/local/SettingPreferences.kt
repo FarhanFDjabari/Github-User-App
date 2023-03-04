@@ -1,4 +1,4 @@
-package com.example.githubuserssubmission.ui.features.setting
+package com.example.githubuserssubmission.core.data.source.local
 
 import android.content.Context
 import androidx.datastore.core.DataStore

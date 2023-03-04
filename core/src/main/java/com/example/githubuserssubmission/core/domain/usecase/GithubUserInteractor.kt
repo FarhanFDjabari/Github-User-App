@@ -30,4 +30,12 @@ class GithubUserInteractor @Inject constructor (private val userRepository: User
     override suspend fun setFavoriteUser(githubUser: GithubUser, state: Boolean) {
         return userRepository.update(githubUser, state)
     }
+
+    override fun getThemeSetting(): Flow<Boolean> {
+        return userRepository.getThemeSetting()
+    }
+
+    override suspend fun saveThemeSetting(isDarkMode: Boolean) {
+        return userRepository.saveThemeSetting(isDarkMode)
+    }
 }

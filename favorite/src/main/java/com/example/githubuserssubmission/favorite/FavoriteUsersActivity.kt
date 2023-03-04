@@ -61,6 +61,7 @@ class FavoriteUsersActivity : AppCompatActivity() {
         viewModel.getFavoriteUsers.observe(this) { result ->
             setUserList(result)
             showShimmer(false)
+            emptyState(result.isEmpty())
         }
     }
 
@@ -102,5 +103,9 @@ class FavoriteUsersActivity : AppCompatActivity() {
     private fun showShimmer(isLoading: Boolean) {
         binding.shimmerLayout.visibility = if (isLoading) View.VISIBLE else View.GONE
         binding.rvFavoriteUsers.visibility = if (isLoading) View.GONE else View.VISIBLE
+    }
+
+    private fun emptyState(isEmpty: Boolean) {
+        binding.tvEmptyListText.visibility = if (isEmpty) View.VISIBLE else View.GONE
     }
 }

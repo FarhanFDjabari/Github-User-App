@@ -2,7 +2,6 @@ package com.example.githubuserssubmission.ui.features.home.viewModel
 
 import androidx.lifecycle.*
 import com.example.githubuserssubmission.core.domain.usecase.GithubUserUseCase
-import com.example.githubuserssubmission.ui.features.setting.SettingPreferences
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
@@ -15,7 +14,6 @@ import javax.inject.Inject
 @HiltViewModel
 class MainViewModel @Inject constructor(
     private val githubUserUseCase: GithubUserUseCase,
-    private val pref: SettingPreferences
 ) : ViewModel() {
 
     val queryChannel = MutableStateFlow("")
@@ -25,12 +23,12 @@ class MainViewModel @Inject constructor(
     }
 
     fun getThemeSettings(): LiveData<Boolean> {
-        return pref.getThemeSetting().asLiveData()
+        return githubUserUseCase.getThemeSetting().asLiveData()
     }
 
     fun setThemeSetting(isDarkMode: Boolean) {
         viewModelScope.launch {
-            pref.saveThemeSetting(isDarkMode)
+            githubUserUseCase.saveThemeSetting(isDarkMode)
         }
     }
 

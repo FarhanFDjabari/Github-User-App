@@ -11,4 +11,6 @@ interface GithubUserUseCase {
         fun getUserDetail(username: String): Flow<Resource<GithubUser?>>
         fun getFavoriteUsers(): Flow<List<GithubUser>>
         suspend fun setFavoriteUser(githubUser: GithubUser, state: Boolean)
+        fun getThemeSetting() : Flow<Boolean>
+        suspend fun saveThemeSetting(isDarkMode: Boolean)
 }

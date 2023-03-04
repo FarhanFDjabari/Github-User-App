@@ -36,7 +36,6 @@ class UserRepositoryImpl @Inject constructor(
         }
     }
 
-
     override fun getUserFollowing(username: String): Flow<Resource<List<GithubUser>>> = flow {
         emit(Resource.Loading())
         when (val response = remoteDataSource.getUserFollowing(username).first()) {
@@ -124,20 +123,11 @@ class UserRepositoryImpl @Inject constructor(
         localDataSource.updateFavoriteUser(userEntity, isFavoriteState)
     }
 
-    companion object {
-        @Volatile
-        private var instance: UserRepository? = null
+    override fun getThemeSetting(): Flow<Boolean> {
+        return localDataSource.getThemeSetting()
+    }
 
-        fun getInstance(
-            remoteData: RemoteDataSource,
-            localData: LocalDataSource,
-        ): UserRepository {
-            if (instance == null) {
-                synchronized(this) {
-                    instance = UserRepositoryImpl(remoteData, localData)
-                }
-            }
-            return instance as UserRepository
-        }
+    override suspend fun saveThemeSetting(isDarkMode: Boolean) {
+        localDataSource.saveThemeSetting(isDarkMode)
     }
 }

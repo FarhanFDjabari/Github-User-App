@@ -11,4 +11,6 @@ interface UserRepository {
     fun getUserDetail(username: String): Flow<Resource<GithubUser?>>
     fun getFavoriteUsers(): Flow<List<GithubUser>>
     suspend fun update(user: GithubUser, isFavoriteState: Boolean)
+    fun getThemeSetting() : Flow<Boolean>
+    suspend fun saveThemeSetting(isDarkMode: Boolean)
 }

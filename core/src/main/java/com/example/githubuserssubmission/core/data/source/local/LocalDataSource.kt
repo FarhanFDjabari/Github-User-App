@@ -6,7 +6,10 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class LocalDataSource @Inject constructor(private val userDao: UserDao)  {
+class LocalDataSource @Inject constructor(
+    private val userDao: UserDao,
+    private val pref: SettingPreferences
+)  {
 
     fun getAllUsers(): Flow<List<GithubUserEntity>> = userDao.getAllUsers()
 
@@ -30,4 +33,8 @@ class LocalDataSource @Inject constructor(private val userDao: UserDao)  {
     }
 
     suspend fun insert(user: List<GithubUserEntity>) = userDao.insert(user)
+
+    suspend fun saveThemeSetting(isDarkMode: Boolean) = pref.saveThemeSetting(isDarkMode)
+
+    fun getThemeSetting(): Flow<Boolean> = pref.getThemeSetting()
 }
