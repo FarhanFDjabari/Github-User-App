@@ -8,7 +8,7 @@
     tools:context=".ui.features.detail.GithubUserDetail">
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/civ_user_avatar"
+        android:id="@+id/civ_user_detail_avatar"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginTop="16dp"
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_name_detail"
+        android:id="@+id/tv_fullname_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -27,23 +27,23 @@
         android:maxLines="2"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="@id/civ_user_avatar"
-        app:layout_constraintRight_toRightOf="@id/civ_user_avatar"
-        app:layout_constraintTop_toBottomOf="@id/civ_user_avatar" />
+        app:layout_constraintLeft_toLeftOf="@id/civ_user_detail_avatar"
+        app:layout_constraintRight_toRightOf="@id/civ_user_detail_avatar"
+        app:layout_constraintTop_toBottomOf="@id/civ_user_detail_avatar" />
 
     <TextView
-        android:id="@+id/tv_username_detail"
+        android:id="@+id/tv_github_username_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:maxWidth="200dp"
         android:maxLines="1"
         android:textSize="16sp"
-        app:layout_constraintLeft_toLeftOf="@id/civ_user_avatar"
-        app:layout_constraintRight_toRightOf="@id/civ_user_avatar"
-        app:layout_constraintTop_toBottomOf="@id/tv_name_detail" />
+        app:layout_constraintLeft_toLeftOf="@id/civ_user_detail_avatar"
+        app:layout_constraintRight_toRightOf="@id/civ_user_detail_avatar"
+        app:layout_constraintTop_toBottomOf="@id/tv_fullname_detail" />
 
     <TextView
-        android:id="@+id/tv_company_detail"
+        android:id="@+id/tv_github_company_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -55,10 +55,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_username_detail" />
+        app:layout_constraintTop_toBottomOf="@id/tv_github_username_detail" />
 
     <TextView
-        android:id="@+id/tv_location_detail"
+        android:id="@+id/tv_github_location_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:drawablePadding="4dp"
@@ -69,20 +69,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_company_detail" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_github_company_detail" />
 
     <LinearLayout
-        android:id="@+id/follower_following_repo_layout"
+        android:id="@+id/github_follower_following_repo_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_location_detail">
+        app:layout_constraintTop_toBottomOf="@id/tv_github_location_detail">
 
         <TextView
-            android:id="@+id/tv_follower_count_detail"
+            android:id="@+id/tv_github_follower_count_detail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:maxWidth="50dp"
@@ -95,7 +95,7 @@
             app:layout_constraintTop_toBottomOf="@+id/iv_location_detail" />
 
         <TextView
-            android:id="@+id/tv_follower_detail"
+            android:id="@+id/tv_github_follower_detail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
@@ -103,24 +103,24 @@
             android:maxLines="1"
             android:text="@string/followers_text"
             android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_follower_count_detail"
-            app:layout_constraintLeft_toRightOf="@id/tv_follower_count_detail"
-            app:layout_constraintStart_toEndOf="@+id/tv_follower_count_detail"
-            app:layout_constraintTop_toTopOf="@+id/tv_follower_count_detail" />
+            app:layout_constraintBottom_toBottomOf="@+id/tv_github_follower_count_detail"
+            app:layout_constraintLeft_toRightOf="@id/tv_github_follower_count_detail"
+            app:layout_constraintStart_toEndOf="@+id/tv_github_follower_count_detail"
+            app:layout_constraintTop_toTopOf="@+id/tv_github_follower_count_detail" />
 
         <ImageView
-            android:id="@+id/circle_dot"
+            android:id="@+id/item_circle_dot"
             android:layout_width="2dp"
             android:layout_height="2dp"
             android:layout_marginStart="4dp"
             android:src="@drawable/circle_dot"
-            app:layout_constraintBottom_toBottomOf="@id/tv_follower_detail"
-            app:layout_constraintStart_toEndOf="@id/tv_follower_detail"
-            app:layout_constraintTop_toTopOf="@id/tv_follower_detail"
+            app:layout_constraintBottom_toBottomOf="@id/tv_github_follower_detail"
+            app:layout_constraintStart_toEndOf="@id/tv_github_follower_detail"
+            app:layout_constraintTop_toTopOf="@id/tv_github_follower_detail"
             tools:ignore="ContentDescription" />
 
         <TextView
-            android:id="@+id/tv_following_count_detail"
+            android:id="@+id/tv_github_following_count_detail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
@@ -128,12 +128,12 @@
             android:maxLines="1"
             android:textSize="14sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_follower_count_detail"
-            app:layout_constraintLeft_toRightOf="@id/circle_dot"
-            app:layout_constraintTop_toTopOf="@+id/tv_follower_count_detail" />
+            app:layout_constraintBottom_toBottomOf="@+id/tv_github_follower_count_detail"
+            app:layout_constraintLeft_toRightOf="@id/item_circle_dot"
+            app:layout_constraintTop_toTopOf="@+id/tv_github_follower_count_detail" />
 
         <TextView
-            android:id="@+id/tv_following_detail"
+            android:id="@+id/tv_github_following_detail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
@@ -141,23 +141,23 @@
             android:maxLines="1"
             android:text="@string/following_text"
             android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@id/tv_following_count_detail"
-            app:layout_constraintLeft_toRightOf="@id/tv_following_count_detail"
-            app:layout_constraintTop_toTopOf="@+id/tv_following_count_detail" />
+            app:layout_constraintBottom_toBottomOf="@id/tv_github_following_count_detail"
+            app:layout_constraintLeft_toRightOf="@id/tv_github_following_count_detail"
+            app:layout_constraintTop_toTopOf="@+id/tv_github_following_count_detail" />
 
         <ImageView
-            android:id="@+id/circle_dot2"
+            android:id="@+id/item_circle_dot2"
             android:layout_width="2dp"
             android:layout_height="2dp"
             android:layout_marginStart="4dp"
             android:src="@drawable/circle_dot"
-            app:layout_constraintBottom_toBottomOf="@id/tv_following_detail"
-            app:layout_constraintStart_toEndOf="@id/tv_following_detail"
-            app:layout_constraintTop_toTopOf="@id/tv_following_detail"
+            app:layout_constraintBottom_toBottomOf="@id/tv_github_following_detail"
+            app:layout_constraintStart_toEndOf="@id/tv_github_following_detail"
+            app:layout_constraintTop_toTopOf="@id/tv_github_following_detail"
             tools:ignore="ContentDescription" />
 
         <TextView
-            android:id="@+id/tv_repository_count_detail"
+            android:id="@+id/tv_github_repository_count_detail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
@@ -165,12 +165,12 @@
             android:maxLines="1"
             android:textSize="14sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_follower_count_detail"
-            app:layout_constraintStart_toEndOf="@+id/circle_dot2"
-            app:layout_constraintTop_toTopOf="@+id/tv_follower_count_detail" />
+            app:layout_constraintBottom_toBottomOf="@+id/tv_github_follower_count_detail"
+            app:layout_constraintStart_toEndOf="@+id/item_circle_dot2"
+            app:layout_constraintTop_toTopOf="@+id/tv_github_follower_count_detail" />
 
         <TextView
-            android:id="@+id/tv_repository_detail"
+            android:id="@+id/tv_github_repository_detail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
@@ -178,31 +178,31 @@
             android:maxLines="1"
             android:text="@string/repositories_text"
             android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_repository_count_detail"
-            app:layout_constraintStart_toEndOf="@+id/tv_repository_count_detail"
-            app:layout_constraintTop_toTopOf="@+id/tv_repository_count_detail" />
+            app:layout_constraintBottom_toBottomOf="@+id/tv_github_repository_count_detail"
+            app:layout_constraintStart_toEndOf="@+id/tv_github_repository_count_detail"
+            app:layout_constraintTop_toTopOf="@+id/tv_github_repository_count_detail" />
 
     </LinearLayout>
 
     <com.google.android.material.tabs.TabLayout
-        android:id="@+id/detail_user_tabs"
+        android:id="@+id/github_detail_user_tabs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="3dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/follower_following_repo_layout" />
+        app:layout_constraintTop_toBottomOf="@id/github_follower_following_repo_layout" />
 
     <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/detail_user_view_pager"
+        android:id="@+id/github_detail_user_view_pager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/detail_user_tabs" />
+        app:layout_constraintTop_toBottomOf="@id/github_detail_user_tabs" />
 
     <com.facebook.shimmer.ShimmerFrameLayout
         android:id="@+id/detail_shimmer_layout"

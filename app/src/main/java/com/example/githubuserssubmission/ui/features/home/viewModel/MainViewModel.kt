@@ -18,10 +18,6 @@ class MainViewModel @Inject constructor(
 
     val queryChannel = MutableStateFlow("")
 
-    companion object {
-        private const val TAG = "MainViewModel"
-    }
-
     fun getThemeSettings(): LiveData<Boolean> {
         return githubUserUseCase.getThemeSetting().asLiveData()
     }
@@ -32,7 +28,7 @@ class MainViewModel @Inject constructor(
         }
     }
 
-    private fun searchUser(keyword : String) = githubUserUseCase.searchUsers(keyword)
+    fun searchUser(keyword : String) = githubUserUseCase.searchUsers(keyword)
 
     val searchResult = queryChannel
         .debounce(600)

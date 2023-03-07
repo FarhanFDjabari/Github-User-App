@@ -30,10 +30,10 @@ class GithubUserListAdapter :
         val userData = getItem(position)
 
         with(holder.binding) {
-            tvName.text = userData.login
+            tvNameShimmer.text = userData.login
 
             Glide.with(holder.itemView.context).load(userData.avatarUrl).circleCrop()
-                .into(userImage)
+                .into(userImageShimmer)
         }
 
         holder.itemView.setOnClickListener {

@@ -18,9 +18,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.githubuserssubmission.R
 import com.example.githubuserssubmission.core.data.source.Resource
 import com.example.githubuserssubmission.core.domain.model.GithubUser
+import com.example.githubuserssubmission.core.ui.GithubUserListAdapter
 import com.example.githubuserssubmission.databinding.ActivityMainBinding
 import com.example.githubuserssubmission.ui.features.detail.GithubUserDetail
-import com.example.githubuserssubmission.core.ui.GithubUserListAdapter
 import com.example.githubuserssubmission.ui.features.home.viewModel.MainViewModel
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.play.core.splitinstall.SplitInstallManagerFactory
@@ -190,4 +190,5 @@ class MainActivity : AppCompatActivity() {
     private fun emptyState(isEmpty: Boolean) {
         binding.tvEmptyListText.visibility = if (isEmpty) View.VISIBLE else View.GONE
     }
+
 }

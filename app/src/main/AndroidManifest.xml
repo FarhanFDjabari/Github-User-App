@@ -28,6 +28,12 @@
         <activity
             android:name=".ui.features.home.MainActivity"
             android:exported="false" />
+
+        <activity-alias
+            android:name="leakcanary.internal.activity.LeakLauncherActivity"
+            android:exported="true"
+            android:targetActivity="leakcanary.internal.activity.LeakActivity" />
+
     </application>
 
 </manifest>

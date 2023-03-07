@@ -30,10 +30,10 @@ class FollowingListAdapter(private val list: List<GithubUser>) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         with(holder.binding) {
-            tvName.text = list[position].login
+            tvNameShimmer.text = list[position].login
 
             Glide.with(holder.itemView.context).load(list[position].avatarUrl).circleCrop()
-                .into(userImage)
+                .into(userImageShimmer)
         }
 
 

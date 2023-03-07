@@ -8,17 +8,16 @@
     android:layout_marginHorizontal="16dp">
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/user_image"
+        android:id="@+id/user_image_shimmer"
         android:layout_width="65dp"
         android:layout_height="65dp"
         app:civ_border_width="2dp"
-        android:src="@drawable/user2"
         app:civ_circle_background_color="@color/blue_git"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_name"
+        android:id="@+id/tv_name_shimmer"
         android:layout_marginStart="10dp"
         android:layout_width="wrap_content"
         android:maxWidth="200dp"
@@ -27,9 +26,9 @@
         android:textStyle="bold"
         android:maxLines="3"
         android:ellipsize="end"
-        app:layout_constraintLeft_toRightOf="@id/user_image"
-        app:layout_constraintTop_toTopOf="@id/user_image"
-        app:layout_constraintBottom_toBottomOf="@id/user_image"
+        app:layout_constraintLeft_toRightOf="@id/user_image_shimmer"
+        app:layout_constraintTop_toTopOf="@id/user_image_shimmer"
+        app:layout_constraintBottom_toBottomOf="@id/user_image_shimmer"
         android:singleLine="true" />
 
     <ImageView
@@ -38,8 +37,8 @@
         android:src="@drawable/ic_baseline_arrow_forward_ios_24"
         app:tint="?android:colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/user_image"
-        app:layout_constraintBottom_toBottomOf="@id/user_image"
+        app:layout_constraintTop_toTopOf="@id/user_image_shimmer"
+        app:layout_constraintBottom_toBottomOf="@id/user_image_shimmer"
         android:contentDescription="@string/arrow_forward_icon" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

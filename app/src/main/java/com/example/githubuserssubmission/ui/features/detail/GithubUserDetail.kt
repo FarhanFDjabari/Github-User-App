@@ -72,8 +72,8 @@ class GithubUserDetail : AppCompatActivity() {
 
         val tabAdapter = FollowingFollowerAdapter(this)
 
-        binding.detailUserViewPager.adapter = tabAdapter
-        TabLayoutMediator(binding.detailUserTabs, binding.detailUserViewPager) { tab, position ->
+        binding.githubDetailUserViewPager.adapter = tabAdapter
+        TabLayoutMediator(binding.githubDetailUserTabs, binding.githubDetailUserViewPager) { tab, position ->
             tab.text = resources.getString(TAB_TITLES[position])
         }.attach()
 
@@ -81,15 +81,15 @@ class GithubUserDetail : AppCompatActivity() {
 
     private fun setUserData(data: GithubUser) {
         with(binding) {
-            tvNameDetail.text = data.name ?: "-"
-            tvUsernameDetail.text = data.login
-            tvCompanyDetail.text = data.company ?: "-"
-            tvLocationDetail.text = data.location ?: "-"
-            tvFollowerCountDetail.text = (data.followers?: 0).toString()
-            tvFollowingCountDetail.text = (data.following?: 0).toString()
-            tvRepositoryCountDetail.text = (data.publicRepos?: 0).toString()
+            tvFullnameDetail.text = data.name ?: "-"
+            tvGithubUsernameDetail.text = data.login
+            tvGithubCompanyDetail.text = data.company ?: "-"
+            tvGithubLocationDetail.text = data.location ?: "-"
+            tvGithubFollowerCountDetail.text = (data.followers?: 0).toString()
+            tvGithubFollowingCountDetail.text = (data.following?: 0).toString()
+            tvGithubRepositoryCountDetail.text = (data.publicRepos?: 0).toString()
 
-            Glide.with(this@GithubUserDetail).load(data.avatarUrl).circleCrop().into(civUserAvatar)
+            Glide.with(this@GithubUserDetail).load(data.avatarUrl).circleCrop().into(civUserDetailAvatar)
             isFavorite = data.isFavorite?: false
 
             setIsFavoriteState(isFavorite)
@@ -154,12 +154,12 @@ class GithubUserDetail : AppCompatActivity() {
     private fun shareUserActionHandler() {
         val shareIntent = Intent(Intent.ACTION_SEND)
         with(binding) {
-            val body = "Info Detail ${tvUsernameDetail.text}:" +
-                    "\nNama Lengkap: ${tvNameDetail.text}" +
-                    "\nDomisili: ${tvLocationDetail.text}" +
-                    "\nPerusahaan: ${tvCompanyDetail.text}" +
-                    "\nFollowers: ${tvFollowerCountDetail.text}" +
-                    "\nFollowing: ${tvFollowingCountDetail.text}"
+            val body = "Info Detail ${tvGithubUsernameDetail.text}:" +
+                    "\nNama Lengkap: ${tvFullnameDetail.text}" +
+                    "\nDomisili: ${tvGithubLocationDetail.text}" +
+                    "\nPerusahaan: ${tvGithubCompanyDetail.text}" +
+                    "\nFollowers: ${tvGithubFollowerCountDetail.text}" +
+                    "\nFollowing: ${tvGithubFollowingCountDetail.text}"
             shareIntent.type = "text/plain"
             shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Detail Data Pengguna Github")
             shareIntent.putExtra(Intent.EXTRA_TEXT, body)
@@ -172,28 +172,28 @@ class GithubUserDetail : AppCompatActivity() {
         with(binding) {
             if (isLoading) {
                 detailShimmerLayout.visibility = View.VISIBLE
-                civUserAvatar.visibility = View.INVISIBLE
-                tvUsernameDetail.visibility = View.INVISIBLE
-                tvNameDetail.visibility = View.INVISIBLE
-                tvCompanyDetail.visibility = View.INVISIBLE
-                tvLocationDetail.visibility = View.INVISIBLE
-                followerFollowingRepoLayout.visibility = View.INVISIBLE
+                civUserDetailAvatar.visibility = View.INVISIBLE
+                tvGithubUsernameDetail.visibility = View.INVISIBLE
+                tvFullnameDetail.visibility = View.INVISIBLE
+                tvGithubCompanyDetail.visibility = View.INVISIBLE
+                tvGithubLocationDetail.visibility = View.INVISIBLE
+                githubFollowerFollowingRepoLayout.visibility = View.INVISIBLE
                 fabFavorite.visibility = View.GONE
             } else {
                 detailShimmerLayout.visibility = View.GONE
-                civUserAvatar.visibility = View.VISIBLE
-                tvUsernameDetail.visibility = View.VISIBLE
-                tvNameDetail.visibility = View.VISIBLE
-                tvCompanyDetail.visibility = View.VISIBLE
-                tvLocationDetail.visibility = View.VISIBLE
-                followerFollowingRepoLayout.visibility = View.VISIBLE
+                civUserDetailAvatar.visibility = View.VISIBLE
+                tvGithubUsernameDetail.visibility = View.VISIBLE
+                tvFullnameDetail.visibility = View.VISIBLE
+                tvGithubCompanyDetail.visibility = View.VISIBLE
+                tvGithubLocationDetail.visibility = View.VISIBLE
+                githubFollowerFollowingRepoLayout.visibility = View.VISIBLE
                 fabFavorite.visibility = View.VISIBLE
             }
         }
     }
 
     private fun setThemeAssets(isDarkMode: Boolean) {
-        binding.detailUserTabs.apply {
+        binding.githubDetailUserTabs.apply {
             setTabTextColors(
                 ContextCompat.getColor(
                     this@GithubUserDetail,

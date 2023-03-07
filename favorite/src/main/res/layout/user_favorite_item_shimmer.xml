@@ -8,7 +8,7 @@
     android:layout_marginHorizontal="16dp">
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/user_image"
+        android:id="@+id/user_image_shimmer"
         android:layout_width="60dp"
         android:layout_height="60dp"
         app:civ_border_width="2dp"
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_name"
+        android:id="@+id/tv_name_shimmer"
         android:layout_marginStart="10dp"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
@@ -26,23 +26,23 @@
         android:textStyle="bold"
         android:ellipsize="start"
         android:background="@color/shimmerColor"
-        app:layout_constraintBottom_toTopOf="@id/tv_location"
-        app:layout_constraintLeft_toRightOf="@id/user_image"
-        app:layout_constraintTop_toTopOf="@id/user_image" />
+        app:layout_constraintBottom_toTopOf="@id/tv_location_shimmer"
+        app:layout_constraintLeft_toRightOf="@id/user_image_shimmer"
+        app:layout_constraintTop_toTopOf="@id/user_image_shimmer" />
 
     <TextView
-        android:id="@+id/tv_location"
+        android:id="@+id/tv_location_shimmer"
         android:layout_marginStart="10dp"
         android:layout_marginTop="5dp"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:textSize="11sp"
         android:background="@color/shimmerColor"
-        app:layout_constraintLeft_toRightOf="@id/user_image"
-        app:layout_constraintTop_toBottomOf="@id/tv_name"/>
+        app:layout_constraintLeft_toRightOf="@id/user_image_shimmer"
+        app:layout_constraintTop_toBottomOf="@id/tv_name_shimmer"/>
 
     <TextView
-        android:id="@+id/tv_follower_count"
+        android:id="@+id/tv_follower_count_shimmer"
         android:layout_marginStart="10dp"
         android:layout_marginTop="5dp"
         android:layout_width="50dp"
@@ -50,11 +50,11 @@
         android:textSize="11sp"
         android:textStyle="bold"
         android:background="@color/shimmerColor"
-        app:layout_constraintLeft_toRightOf="@id/user_image"
-        app:layout_constraintTop_toBottomOf="@id/tv_location"/>
+        app:layout_constraintLeft_toRightOf="@id/user_image_shimmer"
+        app:layout_constraintTop_toBottomOf="@id/tv_location_shimmer"/>
 
     <TextView
-        android:id="@+id/tv_repository_count"
+        android:id="@+id/tv_repository_count_shimmer"
         android:layout_marginStart="10dp"
         android:layout_marginTop="5dp"
         android:layout_width="150dp"
@@ -62,7 +62,7 @@
         android:background="@color/shimmerColor"
         android:textSize="11sp"
         android:textStyle="bold"
-        app:layout_constraintLeft_toRightOf="@id/user_image"
-        app:layout_constraintTop_toBottomOf="@id/tv_follower_count" />
+        app:layout_constraintLeft_toRightOf="@id/user_image_shimmer"
+        app:layout_constraintTop_toBottomOf="@id/tv_follower_count_shimmer" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

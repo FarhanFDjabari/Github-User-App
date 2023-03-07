@@ -7,14 +7,14 @@
     android:layout_height="match_parent">
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/civ_user_avatar"
+        android:id="@+id/civ_user_avatar_shimmer"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginTop="16dp"
         android:src="@color/blackShimmer"/>
 
     <TextView
-        android:id="@+id/tv_name_detail"
+        android:id="@+id/tv_name_detail_shimmer"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -26,7 +26,7 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/tv_username_detail"
+        android:id="@+id/tv_username_detail_shimmer"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="3dp"
@@ -37,7 +37,7 @@
         android:textSize="16sp" />
 
     <TextView
-        android:id="@+id/tv_company_detail"
+        android:id="@+id/tv_github_company_detail_shimmer"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -48,7 +48,7 @@
         android:background="@color/blackShimmer" />
 
     <TextView
-        android:id="@+id/tv_location_detail"
+        android:id="@+id/tv_github_location_detail_shimmer"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:drawablePadding="4dp"
@@ -60,14 +60,14 @@
         app:drawableTint="@color/white" />
 
     <LinearLayout
-        android:id="@+id/follower_following_repo_layout"
+        android:id="@+id/follower_following_repo_layout_shimmer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:gravity="center" >
 
         <TextView
-            android:id="@+id/tv_follower_detail"
+            android:id="@+id/tv_follower_detail_shimmer"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
@@ -76,52 +76,52 @@
             android:textColor="@color/white"
             android:background="@color/blackShimmer"
             android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_follower_count_detail"
-            app:layout_constraintLeft_toRightOf="@id/tv_follower_count_detail"
-            app:layout_constraintStart_toEndOf="@+id/tv_follower_count_detail"
-            app:layout_constraintTop_toTopOf="@+id/tv_follower_count_detail" />
+            app:layout_constraintBottom_toBottomOf="@+id/tv_github_follower_count_detail"
+            app:layout_constraintLeft_toRightOf="@id/tv_github_follower_count_detail"
+            app:layout_constraintStart_toEndOf="@+id/tv_github_follower_count_detail"
+            app:layout_constraintTop_toTopOf="@+id/tv_github_follower_count_detail" />
 
         <ImageView
-            android:id="@+id/circle_dot"
+            android:id="@+id/circle_dot_shimmer"
             android:layout_width="2dp"
             android:layout_height="2dp"
             android:layout_marginStart="4dp"
             android:src="@drawable/circle_dot"
-            app:layout_constraintBottom_toBottomOf="@id/tv_follower_detail"
-            app:layout_constraintStart_toEndOf="@id/tv_follower_detail"
-            app:layout_constraintTop_toTopOf="@id/tv_follower_detail"
+            app:layout_constraintBottom_toBottomOf="@id/tv_follower_detail_shimmer"
+            app:layout_constraintStart_toEndOf="@id/tv_follower_detail_shimmer"
+            app:layout_constraintTop_toTopOf="@id/tv_follower_detail_shimmer"
             app:tint="@color/white"
             android:contentDescription="@string/circle_dot_shimmer" />
 
         <TextView
-            android:id="@+id/tv_following_detail"
+            android:id="@+id/tv_following_detail_shimmer"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
             android:background="@color/blackShimmer" />
 
         <ImageView
-            android:id="@+id/circle_dot2"
+            android:id="@+id/circle_dot2_shimmer"
             android:layout_width="2dp"
             android:layout_height="2dp"
             android:layout_marginStart="4dp"
             android:src="@drawable/circle_dot"
-            app:layout_constraintBottom_toBottomOf="@id/tv_following_detail"
-            app:layout_constraintStart_toEndOf="@id/tv_following_detail"
-            app:layout_constraintTop_toTopOf="@id/tv_following_detail"
+            app:layout_constraintBottom_toBottomOf="@id/tv_following_detail_shimmer"
+            app:layout_constraintStart_toEndOf="@id/tv_following_detail_shimmer"
+            app:layout_constraintTop_toTopOf="@id/tv_following_detail_shimmer"
             app:tint="@color/white"
             android:contentDescription="@string/circle_dot_shimmer" />
 
         <TextView
-            android:id="@+id/tv_repository_detail"
+            android:id="@+id/tv_repository_detail_shimmer"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
             android:background="@color/blackShimmer"
             android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_repository_count_detail"
-            app:layout_constraintStart_toEndOf="@+id/tv_repository_count_detail"
-            app:layout_constraintTop_toTopOf="@+id/tv_repository_count_detail" />
+            app:layout_constraintBottom_toBottomOf="@+id/tv_github_repository_count_detail"
+            app:layout_constraintStart_toEndOf="@+id/tv_github_repository_count_detail"
+            app:layout_constraintTop_toTopOf="@+id/tv_github_repository_count_detail" />
 
     </LinearLayout>
 

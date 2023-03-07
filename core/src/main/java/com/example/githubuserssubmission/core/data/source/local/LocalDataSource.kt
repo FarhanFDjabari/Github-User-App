@@ -2,27 +2,35 @@ package com.example.githubuserssubmission.core.data.source.local
 
 import com.example.githubuserssubmission.core.data.source.local.entity.GithubUserEntity
 import kotlinx.coroutines.flow.Flow
-import javax.inject.Inject
 import javax.inject.Singleton
 
+interface LocalDataSource {
+    fun getFavoriteUsers(): Flow<List<GithubUserEntity>>
+    fun getUserDetail(username: String): Flow<GithubUserEntity?>
+    suspend fun insertUser(user: GithubUserEntity)
+    suspend fun updateFavoriteUser(user: GithubUserEntity, newState: Boolean)
+    suspend fun saveThemeSetting(isDarkMode: Boolean)
+    fun getThemeSetting(): Flow<Boolean>
+}
+
 @Singleton
-class LocalDataSource @Inject constructor(
+class LocalDataSourceImpl constructor(
     private val userDao: UserDao,
     private val pref: SettingPreferences
-)  {
+) : LocalDataSource {
 
-    fun getFavoriteUsers(): Flow<List<GithubUserEntity>> = userDao.getFavoriteUsers()
+    override fun getFavoriteUsers(): Flow<List<GithubUserEntity>> = userDao.getFavoriteUsers()
 
-    fun getUserDetail(username: String): Flow<GithubUserEntity?> = userDao.getUserDetail(username)
+    override fun getUserDetail(username: String): Flow<GithubUserEntity?> = userDao.getUserDetail(username)
 
-    suspend fun insertUser(user: GithubUserEntity) = userDao.insertUser(user)
+    override suspend fun insertUser(user: GithubUserEntity) = userDao.insertUser(user)
 
-    suspend fun updateFavoriteUser(user: GithubUserEntity, newState: Boolean) {
+    override suspend fun updateFavoriteUser(user: GithubUserEntity, newState: Boolean) {
         user.isFavorite = newState
         userDao.update(user)
     }
 
-    suspend fun saveThemeSetting(isDarkMode: Boolean) = pref.saveThemeSetting(isDarkMode)
+    override suspend fun saveThemeSetting(isDarkMode: Boolean) = pref.saveThemeSetting(isDarkMode)
 
-    fun getThemeSetting(): Flow<Boolean> = pref.getThemeSetting()
+    override fun getThemeSetting(): Flow<Boolean> = pref.getThemeSetting()
 }

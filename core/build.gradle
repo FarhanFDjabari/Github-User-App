@@ -18,13 +18,15 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             crunchPngs false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            buildConfigField "String", "GITHUB_API_KEY", '"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"'
+            buildConfigField "String", "GITHUB_API_KEY", GithubAPIKey
         }
         debug {
-            buildConfigField "String", "GITHUB_API_KEY", '"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"'
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "GITHUB_API_KEY", GithubAPIKey
         }
     }
 
@@ -59,4 +61,8 @@ dependencies {
     api "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
     api "androidx.lifecycle:lifecycle-livedata-ktx:2.5.1"
     api "androidx.lifecycle:lifecycle-runtime-ktx:2.5.1"
+
+    // SQL cipher
+    implementation "net.zetetic:android-database-sqlcipher:4.4.0"
+    implementation "androidx.sqlite:sqlite-ktx:2.2.0"
 }
