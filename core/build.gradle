@@ -5,6 +5,9 @@ plugins {
     id 'kotlin-parcelize'
 }
 
+def localProperties = new Properties()
+localProperties.load(new FileInputStream(rootProject.file("local.properties")))
+
 android {
     compileSdk 32
 
@@ -21,12 +24,12 @@ android {
             minifyEnabled true
             crunchPngs false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            buildConfigField "String", "GITHUB_API_KEY", GithubAPIKey
+            buildConfigField "String", "GITHUB_API_KEY", localProperties['GithubAPIKey']
         }
         debug {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            buildConfigField "String", "GITHUB_API_KEY", GithubAPIKey
+            buildConfigField "String", "GITHUB_API_KEY", localProperties['GithubAPIKey']
         }
     }
 
