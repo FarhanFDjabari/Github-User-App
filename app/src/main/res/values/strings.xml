@@ -11,7 +11,6 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="circle_dot_shimmer">circle dot shimmer</string>
-    <string name="arrow_forward_icon">arrow forward icon</string>
     <string name="following_list_empty">Tidak ada following</string>
     <string name="followers_list_empty">Tidak ada followers</string>
     <string name="action_favorite">Favorite Users</string>

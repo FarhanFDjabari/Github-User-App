@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="blue_git">#4078c0</color>
     <color name="black">#000333</color>
     <color name="blackShimmer">#3a3a3a</color>
     <color name="white">#fafafa</color>

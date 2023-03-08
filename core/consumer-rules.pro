@@ -41,7 +41,9 @@
 -keepclassmembers,allowshrinking,allowobfuscation interface * {
 @retrofit2.http.* <methods>;
 }
-
+-dontwarn org.conscrypt.**
+-dontwarn org.bouncycastle.**
+-dontwarn org.openjsse.**
 # Ignore JSR 305 annotations for embedding nullability information.
 -dontwarn javax.annotation.**
 
