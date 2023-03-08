@@ -7,7 +7,7 @@ import okhttp3.Response
 class AddHeaderInterceptor : Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {
         val builder = chain.request().newBuilder()
-            .addHeader("Authorization", "token ${BuildConfig.GITHUB_API_KEY}")
+            .addHeader("Authorization", "token ${BuildConfig.API_KEY}")
         return chain.proceed(builder.build())
     }
 }
